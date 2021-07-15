@@ -77,8 +77,13 @@ int main() {
         scanf("%s", Titular[cont].complemento);
         printf("Qual o consumo de energia em kWh? ");
         scanf("%f", &Titular[cont].consumoEnergia);
-        printf("De qual programa participa (1 - Baixa renda / 2 - Convencional)? ");
-        scanf("%d", &Titular[cont].programaBRC);
+        while(Titular[cont].programaBRC != 1 && Titular[cont].programaBRC != 2){
+            printf("De qual programa participa (1 - Baixa renda / 2 - Convencional)? ");
+            scanf("%d", &Titular[cont].programaBRC);
+            if(Titular[cont].programaBRC != 1 && Titular[cont].programaBRC != 2){
+                printf("\n*****Entrada Inválida*****\n");
+            }
+        }
         printf("\n\n------------------------------------------------------\n");
     }
     
@@ -91,8 +96,6 @@ int main() {
             printf("\nTotal a pagar: $ %.2f", calcConsumoBR(Titular[cont].consumoEnergia));
         } else if(Titular[cont].programaBRC == 2){
             printf("\nTotal a pagar: $ %.2f", calcConsumoCR(Titular[cont].consumoEnergia));
-        } else {
-            printf("\n*****Entrada inválida!*****");
         }
         printf("\n\n------------------------------------------------------\n");
     }

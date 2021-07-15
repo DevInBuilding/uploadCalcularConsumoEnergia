@@ -81,7 +81,7 @@ int main() {
             printf("De qual programa participa (1 - Baixa renda / 2 - Convencional)? ");
             scanf("%d", &Titular[cont].programaBRC);
             if(Titular[cont].programaBRC != 1 && Titular[cont].programaBRC != 2){
-                printf("\n*****Entrada Inválida*****\n");
+                printf("\n*****Entrada Inválida*****\n\n");
             }
         }
         printf("\n\n------------------------------------------------------\n");
